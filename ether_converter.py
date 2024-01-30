@@ -2,6 +2,15 @@ import requests
 from decimal import Decimal
 
 def get_eth_to_currency_price(currency):
+    """Use coingecko API to get the lates ETH conversion rate to given currency
+
+    Arguments:
+        currency {str} -- Currency code
+
+    Returns:
+        int -- ETH conversion rate to given currency, If any error then returns None and prints to terminal
+    """
+    # Use coingecko API to get the latest ETH price in the given currency
     url = "https://api.coingecko.com/api/v3/simple/price"
     params = {
         "ids": "ethereum",
@@ -12,7 +21,6 @@ def get_eth_to_currency_price(currency):
         response = requests.get(url, params=params)
         response.raise_for_status()
         data = response.json()
-        print(currency, data, "ethereum" in data, currency in data["ethereum"])
         if "ethereum" in data and currency in data["ethereum"]:
             return data["ethereum"][currency]
         else:
@@ -23,8 +31,16 @@ def get_eth_to_currency_price(currency):
         return None
 
 def convert_eth_to_currency(eth_amount, currency):
+    """Gets the latest ETH conversion rate to given currency and converts the given ETH amount to given currency
+
+    Arguments:
+        eth_amount  -- Amount of ETH to convert
+        currency -- Currency code
+
+    Returns:
+        float -- The converted amount in given currency, If any error then returns None
+    """
     eth_to_currency_price = get_eth_to_currency_price(currency)
-    print(type(eth_to_currency_price))
 
     if eth_to_currency_price is not None:
         currency_amount = round(Decimal(eth_amount) * Decimal(eth_to_currency_price), 3)

@@ -1,12 +1,9 @@
-
-
 body {
     text-align: center;
     font-family: 'JetBrains Mono';
     background-image: url("bg.jpg");
     background-size: cover;
     background-color: #00011d;
-    /* background-color: linear-gradient(#46045b, #01062c, #062a76); */
     background-repeat: no-repeat;
 }
 
