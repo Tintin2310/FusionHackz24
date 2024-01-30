@@ -4,10 +4,14 @@ body {
     text-align: center;
     background-color: #282A36;
     font-family: 'JetBrains Mono';
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1{
     color: #F8F8F2;
+    margin: 0
 }
 
 h2 {
@@ -31,8 +35,9 @@ input[type="text"] {
 }
 
 button {
+    font-family: 'Jetbrains Mono', 'Courier New';
     padding: 10px 20px;
-    background-color: #6272A4;
+    background-color: #465480;
     color: #F8F8F2;
     border: none;
     border-radius: 5px;
@@ -42,5 +47,16 @@ button {
 }
 
 button:hover{
-    background-color: #BD93F9;
+    background-color: transparent;
+    background-color: #6272A4;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: rgba(98, 114, 164, 0.4);
+    width:fit-content;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 9em auto;
 }

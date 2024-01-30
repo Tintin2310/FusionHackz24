@@ -8,31 +8,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
     <title>ETH balance</title>
 </head>
 <body>
-    <div>
-        <h1>Check your ETH Balance</h1>
+    <div class="container">
+        <div>
+            <h1>Check your ETH Balance</h1>
+        </div>
+        <form action="#" method="post">
+            <div>
+                <input type="text" placeholder="Enter Polygon endpoint" name="Endpoint" required>
+            </div>    
+            <div>
+                <input type="text" placeholder="Enter Account Address" name="Address" required>
+            </div>
+            <div>
+                <button type="submit">Check ETH</button>
+            </div>
+        </form>
+        {% if invalid_endpoint %}
+        <h2>Invalid Endpoint</h2>
+        {% endif %}
+        {% if invalid_address %}
+        <h2>Invalid Address</h2>
+        {% endif %}
+        {% if balance %}
+        <h2 class="balance">Your Balance in wallet : {{balance}}</h2>
+        {% endif %}
     </div>
-    <form action="#" method="post">
-        <div>
-        <input type="text" placeholder="Enter infura endpoint" name="Endpoint" required>
-        </div>
-        <div>
-        <input type="text" placeholder="Enter Account Address" name="Address" required>
-        </div>
-        <div>
-        <button type="submit">Check ETH</button>
-        </div>
-    </form>
-    {% if invalid_endpoint %}
-    <h2>Invalid Endpoint</h2>
-    {% endif %}
-    {% if invalid_address %}
-    <h2>Invalid Address</h2>
-    {% endif %}
-    {% if balance %}
-    <h2 class="balance">Your Balance in wallet : {{balance}}</h2>
-    {% endif %}
 </body>
 </html>
