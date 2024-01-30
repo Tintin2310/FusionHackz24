@@ -1,6 +1,6 @@
 # EtherVault
 
-![Logo of EtherVault](/static/logo.png)
+<img src="/static/logo.png" alt="Logo of EtherVault" width="200">
 
 > Tracking Ether made simple - EtherVault
 
