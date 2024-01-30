@@ -10,6 +10,14 @@ h1{
     color: #F8F8F2;
 }
 
+h2 {
+    color: #ff5555;
+}
+
+.balance {
+    color: #50FA7B;
+}
+
 input {
     font-family: 'Jetbrains Mono', 'Courier New';
 }

@@ -25,5 +25,14 @@
         <button type="submit">Check ETH</button>
         </div>
     </form>
+    {% if invalid_endpoint %}
+    <h2>Invalid Endpoint</h2>
+    {% endif %}
+    {% if invalid_address %}
+    <h2>Invalid Address</h2>
+    {% endif %}
+    {% if balance %}
+    <h2 class="balance">Your Balance in wallet : {{balance}}</h2>
+    {% endif %}
 </body>
 </html>
